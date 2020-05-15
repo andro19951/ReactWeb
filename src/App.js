@@ -4,7 +4,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import './App.css';
 import footer from './footer';
 import HeadNav from "./HeadNav";
-
+import Homeform from "./Homeform";
 
 
 
@@ -15,9 +15,10 @@ function App() {
     <div className="App">
      <div>
       <HeadNav/>
+
          <hr />
 
-          <Route exact path="/home" component={Home}/>
+          <Route exact path="/home" component={Homeform}/>
           <Route children={footer}/>
      </div>
     </div>
