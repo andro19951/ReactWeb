@@ -3,14 +3,14 @@ import HeadSpace from "./HeadSpace";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import React from "react";
-
+import TagManager from 'react-gtm-module'
 
     const ADD_ID = "ADD_ID"
 
     const addItem = item => {
         return {
-            type: this.ADD_ID,
-            item: item
+            type: ADD_ID,
+            GTMid: item
         };
     };
 
@@ -24,7 +24,12 @@ import React from "react";
     };
    var store = createStore(reducer);
 
+    var tagManagerArgs = {
+
+    }
+
 export class Homeform extends React.Component {
+
     constructor(props) {
         super(props)
         this.state = {GTMid: ''}
@@ -42,6 +47,12 @@ export class Homeform extends React.Component {
     handleGTMid(e){
         console.log("GTMid:" + this.state.GTMid)
         e.preventDefault()
+        store.dispatch(addItem(this.state.GTMid))
+        console.log(store.getState())
+        
+        tagManagerArgs['gtmId']=this.state.GTMid
+        TagManager.initialize(tagManagerArgs);
+
     }
 
     render(){

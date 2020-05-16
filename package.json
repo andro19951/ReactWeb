@@ -36,6 +36,7 @@
   },
   "devDependencies": {
     "react-bootstrap": "^1.0.1",
+    "react-gtm-module": "^2.0.8",
     "react-router-dom": "^5.2.0"
   }
 }
